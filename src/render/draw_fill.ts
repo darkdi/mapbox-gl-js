@@ -71,7 +71,7 @@ function drawFill(painter: Painter, sourceCache: SourceCache, layer: FillStyleLa
 
     let elevationType: ElevationType = 'none';
 
-    if (layer.layout.get('fill-elevation-reference') !== 'none') {
+    if (layer.layout && layer.layout.get('fill-elevation-reference') !== 'none') {
         elevationType = 'road';
     } else if (layer.paint.get('fill-z-offset').constantOr(1.0) !== 0.0) {
         elevationType = 'offset';
